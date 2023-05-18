@@ -42,7 +42,7 @@ In this work, we propose a simple yet very effective synthetic image detection m
 3. For testing LASTED: set ```isTrain=0``` and ```test_file='Test.txt'```, then ```sh main.sh```.
 LASTED will detect the images listed in ```annotation/Test.txt``` and report the detection results.
 
-**Note: The pretrained LASTED and related datasets can be downloaded from [Google Drive](www.google.com).**
+**Note: The pretrained LASTED and related datasets can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1xUMoS2npQs0tCno_VZPpUDDPztnD6UgD?usp=share_link).**
 
 ## Citation
 
@@ -55,4 +55,4 @@ If you use this code/dataset for your research, please citing the reference:
 
 ## Acknowledgments
 - [CLIP](https://github.com/openai/CLIP)
-- Part of the dataset are from [Artstation](https://www.artstation.com), [Behance](https://www.behance.net) and [DMDetection](https://github.com/grip-unina/DMimageDetection).
+- Part of the dataset are from [Artstation](https://www.artstation.com), [Behance](https://www.behance.net), [CNNDetection](https://github.com/peterwang512/CNNDetection) and [DMDetection](https://github.com/grip-unina/DMimageDetection).
