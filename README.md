@@ -48,8 +48,11 @@ LASTED will detect the images listed in ```annotation/Test.txt``` and report the
 
 If you use this code/dataset for your research, please citing the reference:
 ```
-@article{Test,
-  title={Test},
+@article{lasted,
+  title={Generalizable Synthetic Image Detection via Language-guided Contrastive Learning},
+  author={H. Wu and J. Zhou and S. Zhang},
+  journal={arXiv preprint:2305.13800},
+  year={2023}
 }
 ```
 
