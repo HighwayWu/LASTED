@@ -42,7 +42,7 @@ In this work, we propose a simple yet very effective synthetic image detection m
 3. For testing LASTED: set ```isTrain=0``` and ```test_file='Test.txt'```, then ```sh main.sh```.
 LASTED will detect the images listed in ```annotation/Test.txt``` and report the detection results.
 
-**Note: The pretrained LASTED and related testing datasets can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1xUMoS2npQs0tCno_VZPpUDDPztnD6UgD?usp=share_link). The training dataset can be downloaded from [Baidu Pan](https://pan.baidu.com/s/1ZgSiNX_Dd7cZcwiHv1ujVg?pwd=h4p7) (~120GB). To acquire the unzip code of the dataset, please fill the [License Form](https://docs.google.com/forms/d/1CZAIZEEugoGiTw8auyiU2LM8qjW0LelAWq2fuuzYAq8/).**
+**Note: The pretrained LASTED and related testing datasets can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1xUMoS2npQs0tCno_VZPpUDDPztnD6UgD?usp=share_link). The training dataset can be downloaded from [Baidu Pan](https://pan.baidu.com/s/1ZgSiNX_Dd7cZcwiHv1ujVg?pwd=h4p7) (~120GB with 4 subsets) or [Google Drive](https://drive.google.com/drive/folders/1lPuJjUpi5QwhkBlUaphRxC2HrBNnU8Pc?usp=sharing) (~30GB with 3 subsets). To acquire the unzip code of the dataset, please fill the [License Form](https://docs.google.com/forms/d/1CZAIZEEugoGiTw8auyiU2LM8qjW0LelAWq2fuuzYAq8/).**
 
 ## Citation
 
