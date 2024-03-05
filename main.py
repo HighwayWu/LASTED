@@ -102,7 +102,7 @@ class ImageDataset(Dataset):
             x = self.albu_pre_val(image=x)['image']
         else:
             x = self.albu_pre_train(image=x)['image']
-        x = self.imagenet_norm(x).unsqueeze(0)
+        x = self.imagenet_norm(x)  # .unsqueeze(0)
         return x
 
     def __len__(self):
