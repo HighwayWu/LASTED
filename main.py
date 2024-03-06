@@ -196,10 +196,11 @@ def train_one_epoch(data_loader, model, optimizer, cur_epoch, loss_meter, args):
     return loss_avg
 
 
-def validation_cluster(model, args, test_file=''):
-    data_loader = DataLoader(
-        ImageDataset(args.data_root, test_file, data_size=args.data_size), args.batch_size, shuffle=False,
-        num_workers=min(48, args.batch_size), )
+def validation_cluster(model, args, test_file='', data_loader=None):
+    if data_loader is None:
+      data_loader = DataLoader(
+          ImageDataset(args.data_root, test_file, data_size=args.data_size), args.batch_size, shuffle=False,
+          num_workers=min(48, args.batch_size), )
     data_loader.dataset.set_val_True()
     model.eval()
     gt_labels_list, pred_labels_list, prob_labels_list = [], [], []
@@ -248,10 +249,11 @@ def validation_cluster(model, args, test_file=''):
     return auc, accuracy, ap
 
 
-def validation_similarity(model, args, test_file=''):
-    data_loader = DataLoader(
-        ImageDataset(args.data_root, test_file, data_size=args.data_size), args.batch_size, shuffle=False,
-        num_workers=min(48, args.batch_size), )
+def validation_similarity(model, args, test_file='', data_loader=None):
+    if data_loader is None:
+      data_loader = DataLoader(
+          ImageDataset(args.data_root, test_file, data_size=args.data_size), args.batch_size, shuffle=False,
+          num_workers=min(48, args.batch_size), )
     data_loader.dataset.set_val_True()
     data_loader.dataset.set_anchor_True()
     model.eval()
@@ -356,8 +358,9 @@ def main(args):
         if args.isTrain == 1:
             train_one_epoch(train_data_loader, model, optimizer, epoch, loss_meter, args)
 
-            val_auc, val_acc, val_ap = validation_cluster(train_data_loader, model, args)
-            # val_auc, val_acc, val_ap = validation_similarity(train_data_loader, model, args)
+            train_data_loader.dataset.set_val_True()
+            val_auc, val_acc, val_ap = validation_cluster(model, args, data_loader=train_data_loader)
+            # val_auc, val_acc, val_ap = validation_similarity(model, args, data_loader=train_data_loader)
             logger.info('Score: Validation AUC: %5.4f, Acc: %5.4f, AP: %5.4f' % (val_auc, val_acc, val_ap))
 
         # Testing:
