@@ -207,8 +207,7 @@ def validation_cluster(model, args, test_file='', data_loader=None):
     label2features_dict = {}
     for (images, labels) in data_loader:
         images = images.cuda()
-        b, rep, C, H, W = images.shape
-        images = images.reshape(b * rep, C, H, W)
+        b, C, H, W = images.shape
         labels = labels.flatten().squeeze().cpu().numpy()
 
         try:
@@ -261,8 +260,7 @@ def validation_similarity(model, args, test_file='', data_loader=None):
     anchor_feats = []
     for (images, labels) in data_loader:
         images = images.cuda()
-        b, rep, C, H, W = images.shape
-        images = images.reshape(b * rep, C, H, W)
+        b, C, H, W = images.shape
         try:
             with torch.no_grad():
                 prob, feats = model(images, isTrain=False)
@@ -276,8 +274,7 @@ def validation_similarity(model, args, test_file='', data_loader=None):
     label2features_dict = {}
     for (images, labels) in data_loader:
         images = images.cuda()
-        b, rep, C, H, W = images.shape
-        images = images.reshape(b * rep, C, H, W)
+        b, C, H, W = images.shape
         labels = labels.flatten().squeeze().cpu().numpy()
         try:
             with torch.no_grad():
