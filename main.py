@@ -381,7 +381,7 @@ def main(args):
             exit()
 
         torch.save(model.state_dict(), os.path.join(args.out_dir, saved_name))
-        lr_schedule.step(val_score)
+        lr_schedule.step(val_ap)
 
 
 def get_lr(optimizer):
