@@ -51,8 +51,10 @@ If you use this code/dataset for your research, please citing the reference:
 @article{lasted,
   title={Generalizable Synthetic Image Detection via Language-guided Contrastive Learning},
   author={H. Wu and J. Zhou and S. Zhang},
-  journal={arXiv preprint:2305.13800},
-  year={2023}
+  journal={IEEE Transactions on Artificial Intelligence},
+  pages={1-11},
+  year={2025},
+  doi={10.1109/TAI.2025.3641104}
 }
 ```
 
